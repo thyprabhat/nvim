@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/prabhatr/Nextcloud/DDP/DDP codes/New_approach'
+let g:netrw_dirhist_7='/home/prabhatr/Nextcloud/DDP/DDP codes'
+let g:netrw_dirhist_6='/home/prabhatr/Nextcloud/DDP/DDP codes/New_approach'
+let g:netrw_dirhist_5='/home/prabhatr/Nextcloud/DDP/DDP codes'
+let g:netrw_dirhist_4='/home/prabhatr/Nextcloud/DDP/stage-1-report/lit'
+let g:netrw_dirhist_3='/home/prabhatr/Nextcloud/DDP/stage-1-report/expt'
+let g:netrw_dirhist_2='/home/prabhatr/Nextcloud/DDP/stage-1-report'
+let g:netrw_dirhist_1='/home/prabhatr/Nextcloud/DDP/stage-1-report/lit'
