@@ -1,6 +1,14 @@
-" Comments in Vimscript start with a `".
+" Commentt:q
+" in Vimscript start with a `".
 
 " If you open this file in Vim, it'll be syntax highlighted for you.
+
+"set guicursor=
+set nohlsearch
+set scrolloff=8
+set signcolumn=yes
+
+let mapleader = ","
 
 
 call plug#begin()
@@ -10,6 +18,7 @@ Plug 'junegunn/vim-plug'
 Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'xavierd/clang_complete'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -23,13 +32,19 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'morhetz/gruvbox'
 Plug '907th/vim-auto-save'
-Plug 'lervag/vimtex'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'gabrielelana/vim-markdown'
+"Plug 'godlygeek/tabular'
+"Plug 'preservim/vim-markdown'
+"Plug 'lervag/vimtex'
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'zchee/deoplete-jedi'
+
 
 call plug#end() 
 
+"let g:ycm_global_ycm_extra_conf = "C:\Users\mailp\AppData\Local\nvim\plugged\YouCompleteMe\.ycm_extra_conf.py"
 
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
@@ -48,9 +63,9 @@ let g:ctrlp_use_caching =0
 let g:auto_save = 1
 let g:auto_save_silent = 0  " do not display the auto-save notification
 
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'my_pdf_viewer'
- let g:livepreview_engine = 'pdflatex'
+"autocmd Filetype tex setl updatetime=1
+"let g:livepreview_previewer = 'my_pdf_viewer'
+"let g:livepreview_engine = 'pdflatex'
 "let g:livepreview_previewer='your_viewer'
 "let g:livepreview_engine ='pdflatex' 
 "let g:livepreview_previewer = 'open -a Preview'
@@ -91,7 +106,7 @@ set shortmess+=I
 set nu
 
 "limit the number of column
-set colorcolumn=100
+set colorcolumn=80
 highlight Colorcolumn ctermbg=0 guibg=lightgrey
 
 
@@ -132,11 +147,11 @@ set incsearch
 nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
 
 " Disable audible bell because it's annoying.
-set noerrorbells visualbell t_vb=
+set noerrorbells
 
 " Enable mouse support. You should avoid relying on this too much, but it can
 " sometimes be convenient.
-set mouse+=a
+"set mouse+=a
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
 " not the only possible bad habit. For example, holding down the h/j/k/l keys
@@ -162,3 +177,19 @@ nnoremap <leader>l :wincmd l<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>f :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+
+let g:python3_host_prog = 'C:/Users/mailp/AppData/Local/Programs/Python/Python39/python.exe'
+
+let g:leetcode_browser='chrome'
+
+"Sets the jj as proxy for escape key 
+:inoremap jj <Esc>
+
+
+
+"Key remapping for LeetCode
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+
+
