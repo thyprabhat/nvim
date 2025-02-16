@@ -40,6 +40,8 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'zchee/deoplete-jedi'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 
 call plug#end() 
