@@ -1,3 +1,7 @@
+-- require("config.lazy")
+
+vim.cmd([[
+
 " Commentt:q
 " in Vimscript start with a `".
 
@@ -14,12 +18,12 @@ let mapleader = ","
 call plug#begin()
 
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/vim-plug'
 Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'xavierd/clang_complete'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'scrooloose/nerdtree'
@@ -33,20 +37,14 @@ Plug 'Shougo/neocomplcache.vim'
 Plug 'morhetz/gruvbox'
 Plug '907th/vim-auto-save'
 Plug 'gabrielelana/vim-markdown'
-"Plug 'godlygeek/tabular'
-"Plug 'preservim/vim-markdown'
-"Plug 'lervag/vimtex'
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'zchee/deoplete-jedi'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
-
 call plug#end() 
 
-"let g:ycm_global_ycm_extra_conf = "C:\Users\mailp\AppData\Local\nvim\plugged\YouCompleteMe\.ycm_extra_conf.py"
 
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
@@ -65,19 +63,6 @@ let g:ctrlp_use_caching =0
 let g:auto_save = 1
 let g:auto_save_silent = 0  " do not display the auto-save notification
 
-"autocmd Filetype tex setl updatetime=1
-"let g:livepreview_previewer = 'my_pdf_viewer'
-"let g:livepreview_engine = 'pdflatex'
-"let g:livepreview_previewer='your_viewer'
-"let g:livepreview_engine ='pdflatex' 
-"let g:livepreview_previewer = 'open -a Preview'
-" Vim is based on Vi. Setting `nocompatible` switches from the default
-" Vi-compatibility mode and enables useful Vim functionality. This
-" configuration option turns out not to be necessary for the file named
-" '~/.vimrc', because Vim automatically enters nocompatible mode if that file
-" is present. But we're including it here just in case this config file is
-" loaded some other way (e.g. saved as `foo`, and then Vim started with
-" `vim -u foo`).
 set nocompatible
 
 " Turn on syntax highlighting.
@@ -194,4 +179,4 @@ nnoremap <leader>ll :LeetCodeList<cr>
 nnoremap <leader>lt :LeetCodeTest<cr>
 nnoremap <leader>ls :LeetCodeSubmit<cr>
 
-
+]])
