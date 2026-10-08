@@ -12,39 +12,42 @@ set nohlsearch
 set scrolloff=8
 set signcolumn=yes
 
-let mapleader = ","
-
+let mapleader = " "
 
 call plug#begin()
 
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/vim-plug'
-Plug 'jremmen/vim-ripgrep'
-Plug 'leafgarland/typescript-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'ycm-core/YouCompleteMe'
-Plug 'mbbill/undotree'
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/vim-easy-align'
-Plug 'ianding1/leetcode.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'luochen1990/rainbow'
-Plug 'preservim/nerdcommenter'
-Plug 'tpope/vim-surround'
-Plug 'Shougo/neocomplcache.vim'
-Plug 'morhetz/gruvbox'
-Plug '907th/vim-auto-save'
-Plug 'gabrielelana/vim-markdown'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'zchee/deoplete-jedi'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+ Plug 'junegunn/vim-plug' " Plugin manager
+" Plug 'jremmen/vim-ripgrep'
+ "Plug 'leafgarland/typescript-vim'
+ Plug 'ctrlpvim/ctrlp.vim' " Decent Fuzzy finder
+ Plug 'mbbill/undotree'
+" Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'scrooloose/nerdtree'
+" Plug 'junegunn/vim-easy-align'
+ Plug 'jiangmiao/auto-pairs'
+ Plug 'luochen1990/rainbow' 
+ Plug 'tpope/vim-surround'
+" Plug 'Shougo/neocomplcache.vim'
+ Plug 'morhetz/gruvbox'
+ Plug '907th/vim-auto-save'
+ Plug 'gabrielelana/vim-markdown'
+ Plug 'vim-airline/vim-airline' " Kind of a status bar for nvim
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'greggh/claude-code.nvim'
+" After installing, add this to your init.vim:
+" lua require('claude-code').setup()
+
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'zchee/deoplete-jedi'
+" Plug 'obsidian-nvim/obsidian.nvim'
+
+ Plug 'junegunn/goyo.vim' " Turn on the focus mode with command :Goyo
+
+ Plug 'junegunn/limelight.vim' " Dim the paragraphs not under the cursor
+" Plug 'numToStr/Comment.nvim'
+" Plug 'Vigemus/iron.nvim'
 
 call plug#end() 
-
 
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
@@ -52,7 +55,7 @@ let g:gruvbox_italic=1
 set background=dark
 let g:airline_theme='gruvbox'
 let g:rainbow_active = 1
-let mapleader=" "
+"let mapleader=" "
 
 let g:netew_browser_split=2
 let g:netrw_banner =0
@@ -85,7 +88,6 @@ set nowrap
 "No swap file creation
 set noswapfile
 
-
 "Disable the default Vim startup message.
 set shortmess+=I
 
@@ -93,7 +95,7 @@ set shortmess+=I
 set nu
 
 "limit the number of column
-set colorcolumn=80
+set colorcolumn=100
 highlight Colorcolumn ctermbg=0 guibg=lightgrey
 
 
@@ -163,20 +165,23 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>f :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>f :wincmd v<bar> :Ex <bar> :vertical resize 70<CR>
+
+nnoremap <leader>o i<CR>
+nnoremap <leader>O i<CR><Esc>k$a
 
 let g:python3_host_prog = 'C:/Users/mailp/AppData/Local/Programs/Python/Python39/python.exe'
 
-let g:leetcode_browser='chrome'
+" let g:leetcode_browser='chrome'
 
 "Sets the jj as proxy for escape key 
 :inoremap jj <Esc>
 
+nnoremap <C-p> :FuzzyOpen<CR>
 
 
-"Key remapping for LeetCode
-nnoremap <leader>ll :LeetCodeList<cr>
-nnoremap <leader>lt :LeetCodeTest<cr>
-nnoremap <leader>ls :LeetCodeSubmit<cr>
+" -----------------------------------------------------------------------
+
+lua require('claude-code').setup()
 
 ]])
